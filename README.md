@@ -1,0 +1,5 @@
+# Instalar depedencias 
+```
+    npm install
+```
+
