@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
-</head>
-<body>
-    <div class="container">
-        <form action="">
-            <textarea name="nlp" id="nlp" cols="30" rows="10" placeholder="Introdusca la generacion">
-            </textarea>
-            <input type="submit" value="Intentar Generar">
-        </form>
-        <div class="conatiner">
-            <div class="information-generate" id="information-generate">
-
+    <link rel="stylesheet" href="./lib/css/bootstrap.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="container pt-5">
+        <h3 class="h3 text-center">
+          Creacion de tablas con LN a código PostgreSQL.
+        </h3>
+        <div class="row my-5">
+          <div class="col-5">
+            <h6 class="h6 text-center">Lenguaje Natural</h6>
+            <form action="">
+              <div class="form-group my-3">
+                <textarea
+                  class="form-control"
+                  name="nlp"
+                  id="nlp"
+                  cols="30"
+                  rows="5"
+                  placeholder="Introdusca la generacion"
+                  id="nlp"
+                ></textarea>
+              </div>
+              <input
+              id="generate"
+                class="btn btn-primary"
+                type="submit"
+                value="Intentar Generar"
+              />
+            </form>
+          </div>
+          <div class="col-5">
+            <h6 class="h6 text-center">Codigo PostgreSQL</h6>
+            <div class="conatiner">
+              <div class="information-generate" id="information-generate"></div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+
+    <script src="./lib/js/bootstrap.bundle.js"></script>
+    <script src="//unpkg.com/brain.js"></script>
     <script src="./js/app.js"></script>
-</body>
+  </body>
 </html>
