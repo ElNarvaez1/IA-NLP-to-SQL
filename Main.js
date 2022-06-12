@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5000;
 //const data  = require('./data/clearDataJSON.json');
-const KEY_SECRET = "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";
+const KEY_SECRET = "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";
 const { Configuration, OpenAIApi } = require("openai");
 
 // express
@@ -20,7 +20,7 @@ const getResponse = async (nlp) => {
     model: "text-davinci-002",
     prompt: "# En PostgreSQL, " + nlp+':\n',
     temperature: 0.3,
-    max_tokens: 80,
+    max_tokens: 90,
     top_p: 1,
     frequency_penalty: 0,
     presence_penalty: 0,
@@ -44,6 +44,8 @@ app.post("/data", (req, res) => {
     .then((data) => {
       console.log(data);
       res.json(data);
+    }).catch((err) => {
+      res.json({error:'error, La llave no es valida'});
     });
 });
 

@@ -7,8 +7,10 @@
     <title>Index</title>
     <link rel="stylesheet" href="./lib/css/bootstrap.css" />
     <!--Liberias externas--->
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/atom-one-dark.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/monokai-sublime.min.css"
+    />
   </head>
   <body>
     <div class="container-fluid">
@@ -29,10 +31,12 @@
                   rows="5"
                   placeholder="Introdusca la generacion"
                   id="nlp"
+                  maxlength="80"
                 ></textarea>
               </div>
+              <div id="feedback" class="invalid-feedback d-flex my-2"></div>
               <input
-              id="generate"
+                id="generate"
                 class="btn btn-primary"
                 type="submit"
                 value="Intentar Generar"
@@ -41,8 +45,11 @@
           </div>
           <div class="col-5">
             <h6 class="h6 text-center">Codigo PostgreSQL</h6>
-            <div class="conatiner">
-              <div class="information-generate" id="information-generate"></div>
+            <div class="conatiner d-flex flex-column">
+              <div class="spinner-grow text-primary mt-5 m-auto d-none" role="status" id="spinner">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div class="information-generate px-3" id="information-generate"></div>
             </div>
           </div>
         </div>
@@ -51,14 +58,19 @@
     <!--
         Libreria esternas para decorar
     -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.js" integrity="sha512-yucm4wm2T2mZNzxtKGWQLTsMAGI+KNFRLsfFDNO9SqdMn9eauAORCybt1UnXRAAlrxJoFpdLSR9lhfuCKx22kQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.js"
+      integrity="sha512-yucm4wm2T2mZNzxtKGWQLTsMAGI+KNFRLsfFDNO9SqdMn9eauAORCybt1UnXRAAlrxJoFpdLSR9lhfuCKx22kQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
     <!--
         END Libreria esternas para decorar
     -->
-    
+
     <script src="./lib/js/bootstrap.bundle.js"></script>
-    
+
     <!-- <script src="//unpkg.com/brain.js"></script> -->
     <script src="./js/app.js"></script>
   </body>
