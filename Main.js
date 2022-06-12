@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5000;
 //const data  = require('./data/clearDataJSON.json');
-const KEY_SECRET = "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";
+const KEY_SECRET = "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";
 const { Configuration, OpenAIApi } = require("openai");
 
 // express
