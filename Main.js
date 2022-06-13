@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 5000;
 //const data  = require('./data/clearDataJSON.json');
-const KEY_SECRET = "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";
+const KEY_SECRET = "";
 const { Configuration, OpenAIApi } = require("openai");
 
 // express
@@ -28,7 +28,7 @@ const getResponse = async (nlp) => {
   return response.data;
 };
 
-// Enrutador alv
+//
 app.get("/", (req, res) => {
   res.send("index.html");
 });

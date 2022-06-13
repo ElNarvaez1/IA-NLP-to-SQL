@@ -16,4 +16,8 @@ linesOfFileClearData.forEach((line) => {
         output: line.split(";")[1],
     });
 });
+
+let brain = new brain.NeuralNetwork();
+brain.train(JSONData);
+
 console.log('%cDatos convertidos a JSON','color:green;')
