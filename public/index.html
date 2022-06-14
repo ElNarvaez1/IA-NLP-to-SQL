@@ -93,32 +93,42 @@
                     name="selectorType"
                     id="selectorType"
                   >
-                  <option value="">Seleccionar el tipo de dato</option>
-                  <option value="de tipo 'smallint'">smallint (Entero pequeño)</option>
-                  <option value="de tipo 'integer'">integer (Entero)</option>
-                  <option value="de tipo 'bigint'">bigint (Entero largo)</option>
-                  <option value="de tipo 'decimal'">decimal</option>
-                  <option value="de tipo 'real'">real</option>
-                  <option value="de tipo 'double'">double</option>
-                  <option value="de tipo 'serial'">serial</option>
-                  <option value="de tipo 'bigserial'">serial grande</option>
-                  <option value="de tipo 'money'">money</option>
-                  <option value="de tipo 'character varying'">Varchar</option>
-                  <option value="de tipo 'text'">text</option>
-                  <option value="de tipo 'bytea'">bytea</option>
-                  <option value="de tipo 'timestamp' sin zona horaria">timestamp</option>
-                  <option value="de tipo 'timestamp' con zona horaria">timestamp (con zona horaria)</option>
-                  <option value="de tipo 'date'">date</option>
-                  <option value="de tipo 'point'">point</option>
-                  <option value="de tipo 'line'">line</option>
-                  <option value="de tipo 'lseg'">lseg</option>
-                  <option value="de tipo 'box'">box</option>
-                  <option value="de tipo 'path'">path</option>
-                  <option value="de tipo 'polygon'">Poligono</option>
-                  <option value="de tipo 'circle'">Circulo</option>
-                  <option value="de tipo 'cidr'">Direccion de red IPV4 o IPV6</option>
-                  <option value="de tipo 'inet'">Direccion de red</option>
-                </select>
+                    <option value="">Seleccionar el tipo de dato</option>
+                    <option value="de tipo 'smallint'">
+                      smallint (Entero pequeño)
+                    </option>
+                    <option value="de tipo 'integer'">integer (Entero)</option>
+                    <option value="de tipo 'bigint'">
+                      bigint (Entero largo)
+                    </option>
+                    <option value="de tipo 'decimal'">decimal</option>
+                    <option value="de tipo 'real'">real</option>
+                    <option value="de tipo 'double'">double</option>
+                    <option value="de tipo 'serial'">serial</option>
+                    <option value="de tipo 'bigserial'">serial grande</option>
+                    <option value="de tipo 'money'">money</option>
+                    <option value="de tipo 'character varying'">Varchar</option>
+                    <option value="de tipo 'text'">text</option>
+                    <option value="de tipo 'bytea'">bytea</option>
+                    <option value="de tipo 'timestamp' sin zona horaria">
+                      timestamp
+                    </option>
+                    <option value="de tipo 'timestamp' con zona horaria">
+                      timestamp (con zona horaria)
+                    </option>
+                    <option value="de tipo 'date'">date</option>
+                    <option value="de tipo 'point'">point</option>
+                    <option value="de tipo 'line'">line</option>
+                    <option value="de tipo 'lseg'">lseg</option>
+                    <option value="de tipo 'box'">box</option>
+                    <option value="de tipo 'path'">path</option>
+                    <option value="de tipo 'polygon'">Poligono</option>
+                    <option value="de tipo 'circle'">Circulo</option>
+                    <option value="de tipo 'cidr'">
+                      Direccion de red IPV4 o IPV6
+                    </option>
+                    <option value="de tipo 'inet'">Direccion de red</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -127,7 +137,14 @@
             -->
             <div class="row mb-4">
               <div class="col-6">
-                <a href="#" class="btn btn-primary" id="btnSugerencia">Enviar a sugerencias</a>
+                <a href="#" class="btn btn-primary" id="btnSugerencia"
+                  >Enviar a sugerencias</a
+                >
+              </div>
+              <div class="col-6">
+                <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalBorrar">
+                  Tabla de sugerencias
+                </button>
               </div>
             </div>
           </div>
@@ -135,8 +152,42 @@
       </div>
     </div>
     <!--
+      Seccion del modal
+    -->
+    <div class="modal" tabindex="-1" id="modalCarga">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Esperando a que el servidor responda.</h5>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      Seccion del segundo modal.
+    -->
+    <div class="modal" tabindex="-1" id="modalBorrar">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Borrar registros</h5>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+        </div>
+      </div>
+    <!--
         Libreria esternas para decorar
     -->
+    <script src="./js/LoadSuggest.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/13.0.1/markdown-it.js"
       integrity="sha512-yucm4wm2T2mZNzxtKGWQLTsMAGI+KNFRLsfFDNO9SqdMn9eauAORCybt1UnXRAAlrxJoFpdLSR9lhfuCKx22kQ=="
