@@ -1,4 +1,4 @@
-const KEY_SECRET = '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'
+const KEY_SECRET = ''
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({

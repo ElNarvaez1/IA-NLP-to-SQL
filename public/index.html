@@ -18,6 +18,9 @@
         <h3 class="h3 text-center">
           Creacion de tablas con LN a código PostgreSQL.
         </h3>
+        <!--
+          Filas, que contienen las cajas de textos.
+        -->
         <div class="row my-5">
           <div class="col-5">
             <h6 class="h6 text-center">Lenguaje Natural</h6>
@@ -46,10 +49,86 @@
           <div class="col-5">
             <h6 class="h6 text-center">Codigo PostgreSQL</h6>
             <div class="conatiner d-flex flex-column">
-              <div class="spinner-grow text-primary mt-5 m-auto d-none" role="status" id="spinner">
+              <div
+                class="spinner-grow text-primary mt-5 m-auto d-none"
+                role="status"
+                id="spinner"
+              >
                 <span class="visually-hidden">Loading...</span>
               </div>
-              <div class="information-generate px-3" id="information-generate"></div>
+              <div
+                class="information-generate px-3"
+                id="information-generate"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <!--
+          Fila que contiene los campos para agregar una nueva sugerencia
+        -->
+        <div class="row">
+          <div class="col-5">
+            <div class="row mb-4">
+              <!--
+                Input del nombre del campo ha enviar a sugerencias
+              -->
+              <div class="col-6">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="nameField"
+                    id="nameField"
+                    placeholder="Nombre del campo"
+                  />
+                </div>
+              </div>
+              <!--
+                Selector del tipo de datos a enviar.
+              -->
+              <div class="col-6">
+                <div class="form-group">
+                  <select
+                    class="form-control"
+                    name="selectorType"
+                    id="selectorType"
+                  >
+                  <option value="">Seleccionar el tipo de dato</option>
+                  <option value="de tipo 'smallint'">smallint (Entero pequeño)</option>
+                  <option value="de tipo 'integer'">integer (Entero)</option>
+                  <option value="de tipo 'bigint'">bigint (Entero largo)</option>
+                  <option value="de tipo 'decimal'">decimal</option>
+                  <option value="de tipo 'real'">real</option>
+                  <option value="de tipo 'double'">double</option>
+                  <option value="de tipo 'serial'">serial</option>
+                  <option value="de tipo 'bigserial'">serial grande</option>
+                  <option value="de tipo 'money'">money</option>
+                  <option value="de tipo 'character varying'">Varchar</option>
+                  <option value="de tipo 'text'">text</option>
+                  <option value="de tipo 'bytea'">bytea</option>
+                  <option value="de tipo 'timestamp' sin zona horaria">timestamp</option>
+                  <option value="de tipo 'timestamp' con zona horaria">timestamp (con zona horaria)</option>
+                  <option value="de tipo 'date'">date</option>
+                  <option value="de tipo 'point'">point</option>
+                  <option value="de tipo 'line'">line</option>
+                  <option value="de tipo 'lseg'">lseg</option>
+                  <option value="de tipo 'box'">box</option>
+                  <option value="de tipo 'path'">path</option>
+                  <option value="de tipo 'polygon'">Poligono</option>
+                  <option value="de tipo 'circle'">Circulo</option>
+                  <option value="de tipo 'cidr'">Direccion de red IPV4 o IPV6</option>
+                  <option value="de tipo 'inet'">Direccion de red</option>
+                </select>
+                </div>
+              </div>
+            </div>
+            <!--
+              Contenedor del boton para enviar a sugerencias.
+            -->
+            <div class="row mb-4">
+              <div class="col-6">
+                <a href="#" class="btn btn-primary" id="btnSugerencia">Enviar a sugerencias</a>
+              </div>
             </div>
           </div>
         </div>

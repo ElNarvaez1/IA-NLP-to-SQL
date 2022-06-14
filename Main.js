@@ -1,9 +1,14 @@
+/**
+ * Importamos los modulos.
+ */
 const express = require("express");
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = require('./Meta.js')
+/**
+ * Declaracion de constantes
+ */
 const app = express();
 const port = 5000;
-//const data  = require('./data/clearDataJSON.json');
-const KEY_SECRET = "";
-const { Configuration, OpenAIApi } = require("openai");
 
 // express
 app.use(express.static("public"));
@@ -11,9 +16,12 @@ app.use(express.json());
 
 // OpenIA
 const configuration = new Configuration({
-  apiKey: KEY_SECRET,
+  apiKey: configuration.key_secret,
 });
-
+/**
+ * Funcion que realiza la peticion a la api de OpenIA.
+ * @param {string} nlp - Texto que se quiere enviar a la api. 
+ */
 const getResponse = async (nlp) => {
   const openai = new OpenAIApi(configuration);
   const response = await openai.createCompletion({
@@ -28,17 +36,21 @@ const getResponse = async (nlp) => {
   return response.data;
 };
 
-//
+// Muestra el archivo index.html
 app.get("/", (req, res) => {
   res.send("index.html");
 });
-
+/**
+ * Ruta que regresa un texto. 
+ */
 app.get("/data", (req, res) => {
   res.send("Método GET :)");
 });
-
+/**
+ * Ruta que recibe los datos, en formato JSON, para posteriormente 
+ * enviar una respuesta al cliente. 
+ */
 app.post("/data", (req, res) => {
-  //console.log(req.body);
   getResponse(req.body.nlp)
     .then((e) => e)
     .then((data) => {
@@ -48,7 +60,7 @@ app.post("/data", (req, res) => {
       res.json({error:'error, La llave no es valida'});
     });
 });
-
+//Se ejecuta cuando el servidor esta listo
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
